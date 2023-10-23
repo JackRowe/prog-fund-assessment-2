@@ -4,9 +4,9 @@ int main()
 {
     outputFile("grid.txt", { 0,0 });
     outputFile("menu.txt", { 14, 0 });
-    //outputFile("x.txt", outputPositions[1]);
-    //outputFile("o.txt", outputPositions[8]);
-    //setOuputCursorPosition({ 10,11 });
+    outputFile("x.txt", outputPositions[1]);
+    outputFile("o.txt", outputPositions[8]);
+    setOuputCursorPosition({ 10,11 });
 }
 
 // TIC TAC TOE
