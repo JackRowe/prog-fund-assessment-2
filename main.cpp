@@ -1,5 +1,12 @@
+#include "main.h"
+
+int main()
+{
+    std::cout << "Hello World!\n";
+}
+
 // TIC TAC TOE
-/* 
+/*
 
 \/ /\
 /\ \/
@@ -18,23 +25,16 @@ ____|____|____
     |    |
 
     |    |
-    |    |   
-    |    |   
+    |    |
+    |    |
 ____|____|____
     |    |
-    |    |   
-    |    |   
+    |    |
+    |    |
 ____|____|____
     |    |
-    |    |   
-    |    |   
+    |    |
+    |    |
     |    |
 
 */
-
-#include "main.h"
-
-int main()
-{
-    std::cout << "Hello World!\n";
-}
