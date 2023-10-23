@@ -127,15 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="console.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="console.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="grid.txt">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </Text>
+    <Text Include="grid.txt" />
+    <Text Include="menu.txt" />
+    <Text Include="o.txt" />
+    <Text Include="x.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
