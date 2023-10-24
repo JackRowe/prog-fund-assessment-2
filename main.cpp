@@ -7,6 +7,8 @@ int main()
     outputFile("x.txt", outputPositions[1]);
     outputFile("o.txt", outputPositions[8]);
     setOuputCursorPosition({ 10,11 });
+
+
 }
 
 // TIC TAC TOE
