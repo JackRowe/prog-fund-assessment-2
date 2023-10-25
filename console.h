@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -15,3 +17,4 @@ void setConsoleSize(COORD size);
 void setConsoleFullscreen(bool fullscreen);
 void setConsolePosition(COORD position);
 HWND getConsole();
+POINT getConsolePosition();

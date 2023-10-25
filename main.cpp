@@ -3,21 +3,20 @@
 // temp include
 #include <iostream>
 
-HWND main_window;
-
 int main()
 {
-	main_window = getConsole();
 
-	for (int n = 0; n < 10; n++) {
-		for (short i = 0; i < 1000; i++) {
-			setConsolePosition({ i, i });
-			Sleep(1);
-		}
+	for (int i = 0; i < 10000; i++) {
+		Sleep(1);
+		POINT consolePosition = getConsolePosition();
+		POINT mousePosition = getMousePosition();
+		int difference = sqrt(pow(mousePosition.x - consolePosition.x, 2) + pow(mousePosition.y - consolePosition.y, 2));
 
-		for (short i = 1000; i > 0; i--) {
-			setConsolePosition({ i, i });
-			Sleep(1);
-		}
+		
+
+		//std::cout << "Console: " << consolePosition.X << ", " << consolePosition.Y << std::endl;
+		//std::cout << "Mouse: " << mousePosition.x << ", " << mousePosition.y << std::endl;
+		std::cout << difference << std::endl;
 	}
+
 }

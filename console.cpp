@@ -1,12 +1,13 @@
 #include "console.h"
 
-HWND window = NULL;
+HWND window = GetConsoleWindow();
+COORD window_position = { 0,0 };
 
 void runSystem(std::string command) {
 	char* command_characters{ new char[command.length()] };
-
+	
 	for (int i = 0; i < command.length(); i++) {
-		command_characters[i] = command[i]; // could overrun array
+		command_characters[i] = command[i]; // could overrun array, idk how fix
 	}
 
 	system(command_characters);
@@ -49,11 +50,7 @@ void setConsoleFullscreen(bool fullscreen) {
 }
 
 HWND getConsole() {
-	LPCWSTR title = L"Test";
-	SetConsoleTitle(title);
-
-	window = FindWindow(NULL, title);
-	return FindWindow(NULL, title);
+	return GetConsoleWindow();
 }
 
 void setConsolePosition(COORD position) {
@@ -61,5 +58,14 @@ void setConsolePosition(COORD position) {
 		window = getConsole();
 	}
 
+	window_position = position;
 	SetWindowPos(window, NULL, position.X, position.Y, 0, 0, SWP_NOSIZE);
+}
+
+POINT getConsolePosition() {
+	RECT rect = { NULL };
+
+	if (GetWindowRect(window, &rect)) {
+		return { rect.right - 30, rect.top + 15 };
+	}
 }
