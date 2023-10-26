@@ -69,3 +69,16 @@ POINT getConsolePosition() {
 		return { rect.right - 30, rect.top + 15 };
 	}
 }
+
+COORD getConsoleSize() {
+	RECT rect = { NULL };
+
+	if (GetWindowRect(window, &rect)) {
+		short left = (short)rect.left;
+		short right = (short)rect.right;
+		short top = (short)rect.top;
+		short bottom = (short)rect.bottom;
+
+		return { short(left - right), short(bottom - top) };
+	}
+}

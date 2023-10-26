@@ -18,3 +18,4 @@ void setConsoleFullscreen(bool fullscreen);
 void setConsolePosition(COORD position);
 HWND getConsole();
 POINT getConsolePosition();
+COORD getConsoleSize();
