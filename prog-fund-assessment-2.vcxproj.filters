@@ -18,10 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="console.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mouse.cpp">
+    <ClCompile Include="render.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,10 +26,7 @@
     <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="console.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mouse.h">
+    <ClInclude Include="render.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
