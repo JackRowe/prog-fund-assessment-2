@@ -9,8 +9,6 @@ int main(){
 	info.bVisible = false;
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info);
 
-	bool held = false;
-
 	CONSOLE_SCREEN_BUFFER_INFO screenInfo;
 	GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &screenInfo);
 	std::cout << std::string(screenInfo.dwSize.X, '-');
@@ -20,23 +18,19 @@ int main(){
 	for (int t = 0; t < 1000; t++) {
 		GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &screenInfo);
 		SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), screenInfo.dwSize);
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { short(screenInfo.dwSize.X / 2), short(user.lastHeight) });
-		std::cout << " ";
-		
 
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { short(screenInfo.dwSize.X / 2), short(user.height) });
-
-		if (!held && GetKeyState(32) & 0x8000) {
+		if (GetKeyState(32) & 0x8000) {
 			user.jump();
-			held = true;
-		}
-		else {
-			held = false;
 		}
 
 		user.update();
 
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { short(screenInfo.dwSize.X / 2), short(user.lastHeight) });
+		std::cout << " ";
+
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { short(screenInfo.dwSize.X / 2), short(user.height) });
+
 		std::cout << "O";
-		Sleep(33);
+		Sleep(66);
 	}
 }
