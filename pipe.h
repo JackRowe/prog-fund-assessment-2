@@ -4,11 +4,11 @@ class pipe
 private:
 
 public:
-	bool direction;
-	int length;
+	int height;
+	int size;
 	int position;
 
-	pipe(int length, bool direction);
+	pipe(int height, int position, int size);
 	void update();
 	void destroy();
 };
