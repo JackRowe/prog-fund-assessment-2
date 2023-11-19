@@ -1,6 +1,7 @@
 #pragma once
 #include <algorithm>
 #include <iostream>
+#include <windows.h>
 
 class player
 {
@@ -16,5 +17,6 @@ public:
 	void jump();
 	void kill();
 	void update();
+	void draw();
 };
 

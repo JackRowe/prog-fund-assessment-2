@@ -24,10 +24,16 @@ void player::update() {
 	test = !test;
 	if (test) { velocity--; }
 
-	velocity = std::max(-1, std::min(velocity, 3));
-	height = std::max(1, std::min(height, 28));
+	velocity = (std::max)(-1, (std::min)(velocity, 3));
+	height = (std::max)(1, (std::min)(height, 27));
 
-	if (height <= 1 || height >= 28) {
-		
-	}
+	player::draw();
+}
+
+void player::draw() {
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { short(60), short(lastHeight) });
+	std::cout << " ";
+
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { short(60), short(height) });
+	std::cout << "O";
 }
